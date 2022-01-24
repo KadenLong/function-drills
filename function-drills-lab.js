@@ -387,25 +387,26 @@ function helloWorld() {
   console.log(fixedTotalFrogs);
   
   ////////////////// PROBLEM 21 ////////////////////
-  let sampleArray = [0,1,2,3,4,7,5,6,8,9]
+  let sampleArray = [0,1,2,3,4,5,6,7,8,9]
   /*
     Write a function that takes in an array of numbers as an argument. In the body of the function, write logic to determine if the array is in ascending order. The function should return true, if it is sorted in ascending order, false if it is not. Create a variable, `arrayIsAscending` and set it equal to your function invoked. Use the sample array to test this function.
   */
   
   
-  function sortThatArray(arr){
+function sortThatArray(arr){
     
-    let control = true;
-  
-    for (let i = 0; i < arr.length; i++){
-      if (arr[i] < arr[i+1]){
-        control = true;
-    } else {
-        control = false;
-      }
-      return control;
+ let control = true;
+ 
+for (let i = 0; i < arr.length; i++){
+  if (arr[i] < arr[i+1] && arr[i+1] < arr.length && control === true){
+    control = true;
+  } else if (arr[i] > arr[i+1] && arr[i+1] < arr.length){
+    control = false;
     }
   }
+
+  return control;
+}
   
   
   let arrayIsAscending = sortThatArray(sampleArray)
